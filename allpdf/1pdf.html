@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>File Viewer</title>
+<style>
+  .viewer {
+    background-image: url(/image/black.jpg);
+    width: 100%;
+    height: 600px;
+  }
+  .navigation {
+    text-align: center;
+    margin-top: 10px;
+  }
+  button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+
+  }
+  button:hover{
+   transform: scale(1.2);
+  }
+  .footer {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .navigation {
+            margin-bottom: 10px;
+        }
+
+        .navigation a {
+            text-decoration: none;
+            color: black;
+            margin-right: 10px;
+        }
+
+        .legal {
+            color: grey;
+        }
+
+        .disclaimer {
+            color: grey;
+            margin-top: 10px;
+        }
+</style>
+</head>
+<body>
+
+<iframe id="fileViewer" class="viewer" src="https://drive.google.com/file/d/1pst9tvV9qOPTFyyLunRWViFzKNPuDeg_/preview"></iframe>
+
+<div class="navigation">
+  <button onclick="changeFile(-1)">&lt;Previous</button>
+  <button onclick="changeFile(1)">Next&gt</button>
+</div>
+
+<div class="footer">
+  <div class="navigation">
+      <a href="/manga.html">Home</a> |
+      <span class="legal">LEGAL DISCLAIMER</span>
+  </div>
+  <div class="disclaimer">
+      The use of the manga and other promotional materials are allowed under the fair use clause of the
+      Copyright Law, and copyrights and trademarks are held by their respective owners © 2024 Anime Senpai.
+  </div>
+  <div class="input-container">
+      <a href="mailto:jbercasio30@gmail.com"><i class="fas fa-envelope icon"></i></a>
+
+      <a href="https://www.facebook.com/justine.bercasio.39/"><i class="fab fa-facebook icon"></i></a>
+
+      <a href="https://www.instagram.com/justinebercasio30/?hl=en"><i class="fab fa-instagram icon"></i></a>
+
+      <a href="tel:+09381662750"><i class="fas fa-phone icon"></i></a>
+
+  </div>
+
+
+</div>
+
+
+<script>
+  var files = [
+  "https://drive.google.com/file/d/1pst9tvV9qOPTFyyLunRWViFzKNPuDeg_/preview",
+    "https://drive.google.com/file/d/1puAMgMI8VnvajRzGi9PIqDS9dPqnwnZQ/preview",
+    "https://drive.google.com/file/d/1q3AC5fslmIIEkBgEXanXgz8QPv7SUDSA/preview",
+    "https://drive.google.com/file/d/1qBNV4eQwJmbmf0veTkAz3Yecb0JHMiE4/preview",
+    "https://drive.google.com/file/d/1qBSsLR2X54bGonG_6_bpx2fsGtqT7wTX/preview",
+    "https://drive.google.com/file/d/1qJbZW1Y5wM6QVbo0PN0l8tngzb9OcAmH/preview",
+    "https://drive.google.com/file/d/1qNHz4gT0KUyXuUhs8pehNjwJFuymTaxg/preview",
+    "https://drive.google.com/file/d/1qOom7R9XkdqSuvrniGFtEpQ1m2oWHFvP/preview",
+    "https://drive.google.com/file/d/1qREdrGOhzn3OaPwDXqCrtoOtTDXW4RfM/preview",
+    "https://drive.google.com/file/d/1qTw3sQ53RkjmCM7X8m_pVYfJ7D5WrvlQ/preview",
+    "https://drive.google.com/file/d/1qUE7frHQkJBmF0b9kB54L1pcpkgE_2Qf/preview",
+    "https://drive.google.com/file/d/1qcyp3zu359jxvAOB5BkUE7cU-jzMCxFC/preview",
+    "https://drive.google.com/file/d/1qeYKm25oiiZpTv5jZ1qVCZ38p6I9ETvA/preview",
+    "https://drive.google.com/file/d/1qiKvTnMgcqVo_f__6uTNA8rXwO4fILat/preview"
+  ];
+  var currentIndex = 0;
+
+  function changeFile(direction) {
+    currentIndex += direction;
+    if (currentIndex < 0) {
+      currentIndex = files.length - 1;
+    } else if (currentIndex > files.length - 1) {
+      currentIndex = 0;
+    }
+    document.getElementById('fileViewer').src = files[currentIndex];
+  }
+</script>
+
+
+</body>
+</html>

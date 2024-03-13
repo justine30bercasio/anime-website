@@ -1,0 +1,89 @@
+
+  .manga-list { padding: 20px; }
+  body{background-color: #333;}
+  .manga { transition: transform 0.3s; }
+  
+  .footer-custom { background-color: #ffffff; color: rgb(0, 0, 0); text-align: center; padding: 10px; margin-top: 20px; }
+  .logo{
+    display: block;
+    margin-left: auto;
+    margin-right:auto;
+    width: 150px;}
+
+.logo-container {
+  position: relative;
+  height: 150px;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Para sa sliding */
+.sliding-background {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 300%;
+  height: 100%;
+  background-image: url(image/slide.jpg);
+  background-size: cover;
+  animation: slide 15s linear infinite;
+ 
+}
+
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+@keyframes slide {
+  from {
+    left: 0;
+  }
+  to {
+    left: -200%; /* Slide to the left */
+  }
+}
+figure{
+    width: 220px;
+    padding: 15px 15px;
+    
+}
+figure:hover{
+    transform: scale(1.03);
+}
+.figure-caption{
+    color: #ffffff;
+    text-align: justify;
+}
+.footer {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  text-align: center;
+}
+
+.navigation {
+  margin-bottom: 10px;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: black;
+  margin-right: 10px;
+}
+
+.legal {
+  color: grey;
+}
+
+.disclaimer {
+  color: grey;
+  margin-top: 10px;
+}
+
+  
+  
